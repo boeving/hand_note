@@ -1,0 +1,284 @@
+
+system: linux mint 19
+
+
+---
+五笔
+
+ibus是输入法框架，ibus-table-wubi是五笔输入法引擎 （如果要拼音输入法，安装ibus-pinyin是拼音输入法引擎。）
+sudo apt-get install ibus ibus-table-wubi
+
+设置Linux Mint的输入法框架
+Linux Mint没有默认的输入法框架，我们可以在终端里用im-config工具来设置一个输入法框架。im-config的意思是input method configuration（输入法配置）。输入下面的命令：
+
+im-config -n ibus
+-n是name的缩略。上面的命令会告诉im-config输入法框架的名字是ibus。
+
+在ibus输入法框架里添加五笔或拼音输入法
+在终端里输入下面的命令打开ibus输入法框架的配置窗口
+
+ibus-setup
+
+用 Shift键切换中英
+=====
+搜狗输入法没安装成功 
+
+https://blog.csdn.net/zhaogang1993/article/details/81293962
+在这个网址去下载
+http://pinyin.sogou.com/linux/
+
+sudo dpkg -i sogoupinyin_2.2.0.0108_amd64.deb
+# 第一次安装会少依赖而失败
+sudo apt-get -f install 
+sudo dpkg -i sogoupinyin_2.2.0.0108_amd64.deb
+======
+\********
+WPS
+
+http://www.wps.cn/product/wpslinux/
+wget http://kdl.cc.ksosoft.com/wps-community/download/6757/wps-office_10.1.0.6757_amd64.deb
+
+sudo dpkg -i wps-office_10.1.0.6757_amd64.deb
+
+
+\********
+deepin-terminal
+
+sudo apt install -y  deepin-terminal
+\********
+
+深度截屏
+sudo apt install -y deepin-screenshot
+
+\********
+keepassx 密码管理器
+
+sudo apt install -y keepassx
+\********
+VNC
+
+https://www.realvnc.com/en/connect/download/viewer/
+wget https://www.realvnc.com/download/file/viewer.files/VNC-Viewer-6.18.907-Linux-x86.deb
+
+https://www.realvnc.com/en/connect/download/vnc/
+wget https://www.realvnc.com/download/file/vnc.files/VNC-Server-6.3.2-Linux-x64.deb
+
+sudo dpkg -i VNC-Viewer-6.18.907-Linux-x86.deb
+sudo apt install -y -f 
+sudo dpkg -i VNC-Viewer-6.18.907-Linux-x86.deb
+\********
+
+Remmina
+https://www.howtoing.com/remmina-remote-desktop-sharing-and-ssh-client/
+sudo apt-get install remmina remmina-plugin-*
+\********
+https://www.teamviewer.com/en/download/linux/
+
+wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
+sudo dpkg -i teamviewer_13.2.26559_amd64.deb
+sudo apt-get install -f
+sudo dpkg -i teamviewer_13.2.26559_amd64.deb
+\********
+
+anydesk
+https://anydesk.com/download?os=linux
+wget https://download.anydesk.com/linux/anydesk_4.0.1-1_amd64.deb?_ga=2.148293431.1020362789.1542545804-1458280979.1542545804
+sudo dpkg -i anydesk_4.0.1-1_amd64.deb
+
+\*********
+wget http://www.wiz.cn/wiznote-linux.html
+
+vim /usr/share/applications/wiznote.desktop
+[Desktop Entry]
+Name=WizNote
+Name[zh_CN]=为知笔记
+Name[en_US]=wiznote
+Exec=WizNote
+Icon=wiznote
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Encoding=UTF-8
+Categories=KDE;Qt;Utility;
+
+
+\********
+google
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+扩展插件
+https://github.com/FelisCatus/SwitchyOmega/releases
+\********
+https://github.com/shadowsocks/shadowsocks-qt5/releases
+
+mv Shadowsocks-Qt5-3.0.1-x86_64.AppImage /opt/.
+
+vim /usr/share/applications/shadowsocks-qt5.desktop
+[Desktop Entry]
+Name=Shadowsocks-Qt5
+GenericName=Shadowsocks-Qt5
+Comment=Shadowsocks GUI client
+Exec=/opt/Shadowsocks-Qt5-3.0.1-x86_64.AppImage
+Icon=/opt/ss-qt5.ico
+Terminal=false
+Type=Application
+Categories=Network;
+StartupNotify=true
+
+\*********
+安装腾讯家的东西
+https://www.lulinux.com/archives/1319
+
+wechat
+https://blog.csdn.net/hsapyzx/article/details/54891498
+
+https://github.com/geeeeeeeeek/electronic-wechat/releases/
+ wget https://github.com/geeeeeeeeek/electronic-wechat/releases/download/V2.0/linux-x64.tar.gz
+tar -xf linux-x64.tar.gz
+cd electronic-wechat-linux-x64
+wget https://raw.githubusercontent.com/geeeeeeeeek/electronic-wechat/master/assets/icon.png -O electronic-wechat.png
+
+vim /usr/share/applications/electronic-wechat.desktop
+
+[Desktop Entry]
+Name=Electronic Wechat
+Name[zh_CN]=微信电脑版
+Name[en_US]=WeChat
+Exec=/opt/electronic-wechat-linux-x64/electronic-wechat
+Icon=/opt/electronic-wechat-linux-x64/electronic-wechat.png
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Encoding=UTF-8
+Categories=Application;Utility;Network;InstantMessaging;
+
+cd ..
+mv electronic-wechat-linux-x64 /opt/.
+
+\********
+
+https://dbeaver.io/download/
+
+dpkg -i dbeaver-ce_5.2.0_amd64.deb
+\*******
+https://community.linuxmint.com/software/search
+
+https://community.linuxmint.com/software/view/gvncviewer
+
+https://community.teamviewer.com/t5/TeamViewer-Knowledge-Base-ZH/%E5%A6%82%E4%BD%95%E5%9C%A8-Linux-%E5%8F%91%E8%A1%8C%E7%89%88%E4%B8%8A%E5%AE%89%E8%A3%85-TeamViewer/ta-p/33704#toc-hId--2076355265
+
+dpkg -i teamviewer_12.0.93330_amd64.deb --fix-missing
+apt-get install -f
+
+\********
+OBS
+
+添加源： 
+sudo add-apt-repository ppa:kirillshkrogalev/ffmpeg-next 
+更新源： 
+sudo apt-get update 
+安装： 
+sudo apt-get install ffmpeg
+
+如果是Ubuntu 15.04可以直接使用 
+sudo apt-get install ffmpeg
+
+安装obs-studio
+添加源： 
+sudo add-apt-repository ppa:obsproject/obs-studio 
+更新源： 
+sudo apt-get update 
+安装： 
+sudo apt-get install obs-studio
+
+\********
+kvm
+https://blog.csdn.net/u011411069/article/details/79893936
+
+sudo apt-get install qemu-kvm qemu virt-manager virt-viewer libvirt-bin bridge-utils -y 
+
+sudo apt-get install spice-client-gtk python-spice-client-gtk gir1.2-spice-client-gtk-3.0 -y --allow-unauthenticated
+
+启动时报错
+ if ret is None:raise libvirtError('virConnectOpenAuth() failed')
+libvirtError: Failed to connect socket to '/var/run/libvirt/libvirt-sock': Permission denied
+
+重新启动系统
+
+-----
+
+百度网盘
+pip3 install bypy
+
+使用说明
+https://blog.phpgao.com/bypy.html
+
+--------
+
+其他
+
+QQ：http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.qq.im/
+TIM：http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.qq.office/
+QQ轻聊版：http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.qq.im.light/
+微信：http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.wechat/
+Foxmail：http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.foxmail/
+百度网盘：http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.baidu.pan/
+360压缩：http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.cn.360.yasuo/
+
+
+首先说明安装deb包的命令如下：
+sudo dpkg -i xxx.deb
+
+
+运行
+sudo apt install -f
+---
+docker
+https://blog.csdn.net/zlbj1984/article/details/79140868
+一、更新包索引，并安装依赖包
+sudo apt-get update
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+二、添加Docker官方的GPG秘钥
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+三、设置稳定版的仓库（注意：Linux Mint 18.2使用xeninal的源）
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
+
+
+四、更新并安装Docker-CE
+sudo apt-get update
+sudo apt-get install docker-ce
+
+
+五、验证Docker是否安装成功
+sudo docker run hello-world
+-------
+VSCode
+https://code.visualstudio.com/Download
+
+
+----
+VMware
+
+chmod +x VMware-Workstation-Full-15.0.1-10737736.x86_64.bundle 
+sudo ./VMware-Workstation-Full-15.0.1-10737736.x86_64.bundle 
+
+----
+安装Django 
+tar -xf Django-2.1.3.tar.gz 
+cd Django-2.1.3/
+sudo apt install python3-pip
+sudo pip3 install virtualenv
+sudo pip3 install setuptools
+python3 setup.py install
+
+
+-----
+pycharm
+tar -xf pycharm-professional-2018.2.4.tar.gz 
+cd pycharm-2018.2.4/
+./bin/pycharm.sh
+---
+
