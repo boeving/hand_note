@@ -14,7 +14,10 @@ UUID=f7de34bb-5fa2-4169-b74c-3a7c3b619db4	/myfile		xfs	defaults	1 2
 
 修复ntfs磁盘
 ntfsfix /dev/sdb1
+----
+ssh-keygen
 
+ssh-copy-id root@exmop.com
 
 ----
 git
@@ -49,3 +52,6 @@ nginx
 #      add_header Access-Control-Allow-Methods GET,POST,OPTIONS;
 
 ----
+
+
+-----
