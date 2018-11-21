@@ -228,9 +228,16 @@ Foxmail：http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.foxmail/
 360压缩：http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.cn.360.yasuo/
 
 
-首先说明安装deb包的命令如下：
-sudo dpkg -i xxx.deb
+首先说明要 deepin-wine环境
+https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu
+克隆 (git clone https://github.com/wszqkzqk/deepin-wine-ubuntu.git) 或下载到本地。
+在中国推荐用下面的地址，速度更快： (git clone https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu.git)
+方法1(推荐)：在终端中运行（授予可执行权限后）： ./install.sh 。
+方法2：使用图形界面的软件包管理器按顺序安装所有 deb 文件。
 
+
+安装deb包的命令如下：
+sudo dpkg -i xxx.deb
 
 运行
 sudo apt install -f
