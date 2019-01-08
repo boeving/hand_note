@@ -33,7 +33,7 @@ git push origin master
 ----
 
 docker run -dit --restart=always --name centos_node1 -p 8280:80 -v /var/www:/storage registry.cn-shenzhen.aliyuncs.com/itcp/centos:latest /usr/sbin/init
-
+--net dobr1 --ip 172.17.0.10
 --cpu-shares 170
 -m 300m --memory-swap
 
@@ -43,6 +43,15 @@ docker run -dit --restart=always --name centos_node1 -p 8280:80 -v /var/www:/sto
  privileged启动的容器，可以看到很多host上的设备，并且可以执行mount。
  甚至允许你在docker容器中启动docker容器。
 
+
+自定义网络
+yum install -y bridge-utils
+docker network create --subnet=172.17.0.0/16 dobr1
+brctl show
+
+route  # 或者查看路由
+
+*** --net dobr1 --ip 172.17.0.10   # 指定 ip 为 172.17.0.10 ，连接 dobr1 网桥
 ----
 nginx
 
