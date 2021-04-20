@@ -41,7 +41,7 @@ git pull origin dev   # 如果你需要 指定分支拉取可以这样
 
 
 
-分支管理
+### 分支管理
 
 ```
 git branch -a          # 查看当前分支情况
@@ -137,5 +137,23 @@ git reflog
 
 
 
+### 版本标签
 
+```
+# 查看历史tag
+git tag
+
+# 创建新tag
+git tag -a v1.2 -m "my version 1.2;add ..."
+
+# 保存tag到远程仓库
+git push origin v1.2  # 推送指定tag
+git push origin --tags	# 推送历史所有tag
+
+# 删除tag 
+git tag -d v1.2
+
+# 查看一个tag中的所有代码修改详情
+git show v1.2
+```
 
